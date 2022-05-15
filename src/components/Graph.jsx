@@ -13,7 +13,7 @@ import { Line } from 'react-chartjs-2';
 import { Combobox as Listbox, Transition } from '@headlessui/react';
 import { Icon } from '@iconify/react';
 import { findFlagUrlByIso3Code } from 'country-flags-svg';
-import currenciesName from './currenciesName.json';
+import currenciesName from '../currenciesName.json';
 
 ChartJS.register(
   CategoryScale,
@@ -102,13 +102,13 @@ function Graph() {
 
   return (
     <div className="mt-6 h-full flex flex-col">
-      <div className="flex gap-8">
-        <div className="w-1/2">
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-8">
+        <div className="w-full sm:w-1/2">
           <Listbox value={fromCurrency} onChange={setFromCurrency}>
             <span className="text-xs text-zinc-400 font-medium">From</span>
             <div className="border-b-2 border-zinc-200 flex items-center pb-2">
               <Listbox.Button className="w-full flex items-center justify-between">
-                <span>
+                <span className="whitespace-nowrap overflow-hidden">
                   {fromCurrency}
                   {' '}
                   -
@@ -157,12 +157,12 @@ function Graph() {
             </Transition>
           </Listbox>
         </div>
-        <div className="w-1/2">
+        <div className="w-full sm:w-1/2">
           <Listbox value={toCurrency} onChange={setToCurrency}>
             <span className="text-xs text-zinc-400 font-medium">To</span>
             <div className="border-b-2 border-zinc-200 flex items-center pb-2">
               <Listbox.Button className="w-full flex items-center justify-between">
-                <span>
+                <span className="whitespace-nowrap overflow-hidden">
                   {toCurrency}
                   {' '}
                   -
@@ -212,7 +212,7 @@ function Graph() {
           </Listbox>
         </div>
       </div>
-      <div className="h-full mt-4">
+      <div className="h-56 sm:h-full mt-6 mb-12">
         {JSON.stringify(chartData) !== '{}' && <Line options={options} data={chartData} height="100%" />}
       </div>
     </div>
