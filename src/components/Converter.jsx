@@ -52,7 +52,7 @@ function Converter({ fromCurrencies, setFromCurrencies, setRateListOpen }) {
 
   return (
     <div className="h-full flex-1 flex flex-col overflow-y-auto">
-      <div className="p-10 sm:p-16 pt-10 flex flex-col h-full relative">
+      <div className="p-10 sm:p-16 !pt-10 !pb-0 flex flex-col h-full relative">
         <div className="w-full flex items-center justify-between">
           <div>
             <h1 className="w-min whitespace-nowrap text-[1.6rem] sm:text-4xl font-medium">Currency Converter</h1>

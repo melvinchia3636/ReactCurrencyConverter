@@ -212,7 +212,7 @@ function Graph() {
           </Listbox>
         </div>
       </div>
-      <div className="h-56 sm:h-full mt-6 mb-12">
+      <div className="h-56 sm:!h-full mt-6 mb-8">
         {JSON.stringify(chartData) !== '{}' && <Line options={options} data={chartData} height="100%" />}
       </div>
     </div>
