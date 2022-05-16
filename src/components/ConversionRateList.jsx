@@ -23,7 +23,7 @@ function ConversionRateList({ fromCurrencies, isRateListOpen, setRateListOpen })
     || currenciesName[name][0]?.toLowerCase().includes(rateListCurrencyQuery.toLowerCase()));
 
   return (
-    <div className={`h-full absolute top-0 ${
+    <div className={`h-full absolute top-0 z-20 ${
       isRateListOpen ? 'left-0' : 'left-full'
     } lg:static w-full lg:w-3/12 bg-white shadow-md p-8 pb-0 flex flex-col transition-all duration-500`}
     >
