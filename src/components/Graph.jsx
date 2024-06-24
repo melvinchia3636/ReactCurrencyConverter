@@ -116,7 +116,7 @@ function Graph() {
                   {currenciesName[fromCurrency][0]}
                 </span>
                 <div className="flex items-center">
-                  <img src={findFlagUrlByIso3Code(currenciesName[fromCurrency][1])} alt="flag" className="w-6 h-min shadow-sm mr-2 rounded-sm" />
+                  <img src={findFlagUrlByIso3Code(currenciesName[fromCurrency][1])} alt="flag" className="w-6 h-6 shadow-sm mr-2 rounded-sm" />
                   <Icon icon="uil:direction" className="w-6 h-6 text-zinc-400" />
                 </div>
               </Listbox.Button>
@@ -170,7 +170,7 @@ function Graph() {
                   {currenciesName[toCurrency][0]}
                 </span>
                 <div className="flex items-center">
-                  <img src={findFlagUrlByIso3Code(currenciesName[toCurrency][1])} alt="flag" className="w-6 h-min shadow-sm mr-2 rounded-sm" />
+                  <img src={findFlagUrlByIso3Code(currenciesName[toCurrency][1])} alt="flag" className="w-6 h-6 shadow-sm mr-2 rounded-sm" />
                   <Icon icon="uil:direction" className="w-6 h-6 text-zinc-400" />
                 </div>
               </Listbox.Button>

@@ -1,17 +1,17 @@
 /* eslint-disable react/prop-types */
-import { Combobox, Transition } from "@headlessui/react";
-import { Icon } from "@iconify/react";
-import { findFlagUrlByIso3Code } from "country-flags-svg";
-import React, { useEffect, useState } from "react";
-import currenciesName from "../currenciesName.json";
+import { Combobox, Transition } from '@headlessui/react';
+import { Icon } from '@iconify/react';
+import { findFlagUrlByIso3Code } from 'country-flags-svg';
+import React, { useEffect, useState } from 'react';
+import currenciesName from '../currenciesName.json';
 
 function ConversionRateList({
   fromCurrencies,
   isRateListOpen,
   setRateListOpen,
 }) {
-  const [rateListCurrencyQuery, setRateListCurrencyQuery] = useState("");
-  const [rateListCurrency, setRateListCurrency] = useState("USD");
+  const [rateListCurrencyQuery, setRateListCurrencyQuery] = useState('');
+  const [rateListCurrency, setRateListCurrency] = useState('USD');
   const [rateList, setRateList] = useState([]);
 
   useEffect(() => {
@@ -22,21 +22,19 @@ function ConversionRateList({
       });
   }, [rateListCurrency]);
 
-  const filteredRateListCurrencies =
-    rateListCurrencyQuery === ""
-      ? fromCurrencies
-      : fromCurrencies.filter(
-          ([name]) =>
-            name.toLowerCase().includes(rateListCurrencyQuery.toLowerCase()) ||
-            currenciesName[name][0]
+  const filteredRateListCurrencies = rateListCurrencyQuery === ''
+    ? fromCurrencies
+    : fromCurrencies.filter(
+      ([name]) => name.toLowerCase().includes(rateListCurrencyQuery.toLowerCase())
+            || currenciesName[name][0]
               ?.toLowerCase()
-              .includes(rateListCurrencyQuery.toLowerCase())
-        );
+              .includes(rateListCurrencyQuery.toLowerCase()),
+    );
 
   return (
     <div
       className={`h-full absolute top-0 z-20 ${
-        isRateListOpen ? "left-0" : "left-full"
+        isRateListOpen ? 'left-0' : 'left-full'
       } lg:static w-full lg:w-3/12 bg-white shadow-md p-8 pb-0 flex flex-col transition-all duration-500`}
     >
       <div className="flex items-center justify-between">
@@ -86,10 +84,13 @@ function ConversionRateList({
                     <>
                       <span
                         className={`block truncate ${
-                          selected ? "font-medium" : "font-normal"
+                          selected ? 'font-medium' : 'font-normal'
                         }`}
                       >
-                        {name} - {currenciesName[name][0]}
+                        {name}
+                        {' '}
+                        -
+                        {currenciesName[name][0]}
                       </span>
                       {selected ? (
                         <span>
